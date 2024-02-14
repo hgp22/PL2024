@@ -32,9 +32,6 @@ print("--Resultados--", '\n',
       "Lista Ordenada de Modalidades:", modalidades, '\n',
       "Percentagem de atletas aptos e inaptos:", aptos, n_aptos, '\n'
       "Distribuicao por Faixa etarias:")
-i = 0
-while i < len(faixa_etaria):
-    a = i * 5
-    print(f'[{a}-{a+4}] = {faixa_etaria[i]}')
-    i += 1
+for i, faixa in enumerate(faixa_etaria):
+    print(f'[{i*5}-{(i*5)+4}] = {faixa}')
 ##  
