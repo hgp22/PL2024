@@ -1,13 +1,13 @@
+import sys
+
 entradas = 0
 modalidades = []
 aptos = 0
 idades = []
 
-f = open("emd.csv", "r")
+sys.stdin.readline() # ignorar a primeira linha
 
-f.readline() # ignorar a primeira linha
-
-for line in f:
+for line in sys.stdin:
     entradas += 1
     item = line.split(',')
     idades.append(int(item[5]))
@@ -17,7 +17,6 @@ for line in f:
         
     if item[8] not in modalidades:
         modalidades.append(item[8])
-f.close()
 
 modalidades.sort()
 
@@ -25,9 +24,8 @@ aptos = (aptos/entradas)*100
 n_aptos = 100 - aptos
 
 faixa_etaria = [0] * 21
-print(idades)
 for i in idades:
-    faixa_etaria[i//5] += 1
+    faixa_etaria[int(i/5)] += 1
 
 ##
 print("--Resultados--", '\n',
