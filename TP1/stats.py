@@ -25,7 +25,7 @@ n_aptos = 100 - aptos
 
 faixa_etaria = [0] * 21
 for i in idades:
-    faixa_etaria[int(i/5)] += 1
+    faixa_etaria[i//5] += 1
 
 ##
 print("--Resultados--", '\n',
